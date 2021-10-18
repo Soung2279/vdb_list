@@ -44,7 +44,7 @@ with open('./vdb.json', 'w', encoding='utf-8') as f:
         name_extra = vdb_dict["vtbs"][x]["name"]["extra"]
 
         vdbdata = {
-            f"(x)":[
+            f"{x}":[
                 f'{name}',   #中文名
                 f'{name_extra}',    #别名
                 f'{name_default}',  #默认语言
