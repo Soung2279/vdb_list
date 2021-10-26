@@ -27,13 +27,13 @@
 *****
 
 ## 安装
-- **步骤一** : 直接下载/克隆本项目，将文件夹放入 ``hoshino/modules`` 路径下, 在 ``hoshino/config/__bot__.py`` 里的 ``MODULES_ON`` 中添加 "vdb_list"
+- **步骤一** : 直接下载/克隆本项目，将文件夹放入 ``hoshino/modules`` 路径下, 在 ``hoshino/config/__bot__.py`` 里的 ``MODULES_ON`` 中添加 "vdb"
 
 ```python
 # 启用的模块
 MODULES_ON = {
     'xxx',
-    'vdb_list',  #注意英文逗号
+    'vdb',  #注意英文逗号
     'xxx',
 }
 ```
@@ -97,13 +97,33 @@ JSON_LIST = "./hoshino/modules/vdb/list.json"  #此处填写 list.json 文件路
 
 ##### 手动更新
 
+<details>
+    <summary>#1 自行下载list.json（推荐）</summary>
+
+- 前往[vdb提供的list.json](https://vdb.vtbs.moe/json/list.json)，直接保存该网页为**list.json**
+
+- 重命名 ``replace.sample`` 为 ``replace.py``
+
+- 运行 ``replace.py``
+
+- 运行完成后，将 ``vdb.json`` 里的所有的 ``}{`` 替换为 ``,``
+
+- 还原命名 ``replace.sample``
+
+</details>
+
+<details>
+    <summary>#2 全自动更新（可能因网络原因卡住）</summary>
+
 - 重命名 ``update.sample`` 为 ``update.py``
 
 - 运行 ``update.py``
 
-- 将 ``vdb.json`` 里的所有的 ``}{`` 替换为 ``,``
+- 运行完成后，将 ``vdb.json`` 里的所有的 ``}{`` 替换为 ``,``
 
 - 还原命名 ``update.sample``
+
+</details>
 
 *****
 
@@ -120,6 +140,12 @@ made by [Soung2279@Github](https://github.com/Soung2279/)
 [VTuber Database项目地址](https://github.com/dd-center/vdb)
 
 ### 更新日志
+
+##### 2021/10/26
+
+修复 update.sample 可能无法下载文件的错误，并做逻辑优化
+
+新增 replace.sample 用于用户自行下载[list.json](https://vdb.vtbs.moe/json/list.json)后进行文件重写。
 
 ##### 2021/9/21
 

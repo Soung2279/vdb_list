@@ -1,24 +1,7 @@
 import json
-import urllib.request
-import re
-import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
- 
-def getHtml(url):
-    html = urllib.request.urlopen(url).read()
-    return html
- 
-def saveJson(file_name, file_content):
-    #    注意windows文件命名的禁用符，比如 /
-    with open(file_name.replace('/', '_') + ".json", "wb") as f:
-        #   写文件用bytes而不是str，所以要转码
-        f.write(file_content)
 
 aurl = "https://vdb.vtbs.moe/json/list.json"
-print(f'\n即将从{aurl}进行下载...')
-html = getHtml(aurl)
-saveJson("list", html)
-print('\n下载成功。即将执行文件重写...\n')
+print(f'\n即将进行文件重写，请确认使用的list.json与{aurl}提供的json文件一致.')
 
 f = open('./list.json', 'r', encoding='utf-8')
 content = f.read()
